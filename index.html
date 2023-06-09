@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Newsletter sign-up form with success message</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+    .icon-list {}
+    .whole-pc{
+      display: flex;
+    } 
+    .whole-mobile{
+      display: block;
+    }
+    .text{
+      width: 50%;
+      height:100%;
+      padding-left: 10%;
+    }
+    h1{
+      font-size: 400%;
+    
+    }
+    .image{
+   width:100%;
+   height:100%;
+   display:inline-block;
+      padding-top: 1%;
+    padding-left:10%;
+    }
+    .icon-list{
+      font-size: 20px;
+      display:block;
+    }
+    input{
+      height: 45px;
+      width: 350px;
+      padding: 10px;
+      font-size: 15px;
+      
+    }
+    .btn{
+      font-size: 16px;
+      height:60px;
+      width:350px;
+      padding: 10px;
+      background-color: black;
+      color: white;
+      border-radius: 4px;
+      transition-duration: 0.3s;
+      
+    }
+    .btn:hover{
+      background-color: rgba(47, 45, 45, 0.971);
+      color:white;
+    }
+    @media screen and (max-width: 600px) {
+      .whole-pc{
+        display:none;
+      }
+  }
+  @media screen and (min-width: 600px){
+  .whole-mobile{
+      display:none;
+    }
+  }
+  </style>
+  <!-- <script>
+    function validateForm() {
+      let x = document.forms["myForm"]
+      ["email"].value;
+      if (x==""){
+        alert("enter valid email");
+        return false;
+      }
+    }
+  </script> -->
+</head>
+<body>
+
+  <!-- Sign-up form start -->
+  
+  <div class="whole-pc">
+    <div class="text">
+      <h1> Stay updated!</h1>
+     
+       <span class="icon-list">Join 60,000+ product managers receiving monthly <br> updates on:</span><br>
+     
+       <span class="icon-list"> <img src="/assets/images/icon-list.svg" alt="" > discovery and building what matters</span><br>
+       <span class="icon-list"><img src="/assets/images/icon-list.svg" alt="">Measuring to ensure updates are a success</span><br>
+       <span class="icon-list"><img src="/assets/images/icon-list.svg" alt="">And much more!</span><br >
+     
+       <b>Email address</b><br><br>
+       <input id="emailEnter" type="email" placeholder="email@company.com" name="email" required>
+       <br><br><br>
+       
+       <button onclick="validateAndNavigate()" class="btn" >Subscribe to monthly newsletter</button>
+      
+     </div>
+
+<div class="image">
+  
+<img src="/assets/images/illustration-sign-up-desktop.svg" alt="" class="image1">
+
+
+</div>
+</div>
+
+<div class="whole-mobile">
+
+  <div class="image">
+    
+ 
+    <img src="/assets/images/illustration-sign-up-mobile.svg" alt="" class="image2">
+    
+    </div>
+
+  <div class="text">
+   <h1> Stay updated!</h1>
+  
+    <span class="icon-list">Join 60,000+ product managers receiving monthly <br> updates on:</span><br>
+  
+    <span class="icon-list"> <img src="/assets/images/icon-list.svg" alt="" > discovery and building what matters</span><br>
+    <span class="icon-list"><img src="/assets/images/icon-list.svg" alt="">Measuring to ensure updates are a success</span><br>
+    <span class="icon-list"><img src="/assets/images/icon-list.svg" alt="">And much more!</span><br >
+  
+    <b>Email address</b><br><br>
+    <input id="emailEnter" type="email" placeholder="email@company.com" name="email" required>
+    <br><br><br>
+    
+    <button onclick="validateAndNavigate()" class="btn" >Subscribe to monthly newsletter</button>
+   
+  </div>
+  
+  
+  </div>
+  <!-- Sign-up form end -->
+
+  <!-- Success message start -->
+
+  <!-- Thanks for subscribing!
+
+  A confirmation email has been sent to ash@loremcompany.com. 
+  Please open it and click the button inside to confirm your subscription.
+
+  Dismiss message -->
+
+  <!-- Success message end -->
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+
+
+
+
+
+
+
+  <script>
+    function validateAndNavigate(){
+      var emailValue=document.getElementById("emailEnter").value;
+
+      if (isValidEmail(emailValue)){
+        window.open("newpage.html","_blank");
+      } else {
+        alert("Invalid email address! Please enter a valid email address.");
+      }
+    }
+
+    function isValidEmail(email){
+      var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailRegex.test(email);
+    }
+  </script>
+</body>
+</html>
